@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Court Dossier — Read the investigation</title>
+<meta name="description" content="Step inside the investigation. Read the raw narratives of history's most notable crimes and trials.">
+<meta name="theme-color" content="#F4F1EA">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Court Dossier">
+<meta property="og:title" content="Court Dossier">
+<meta property="og:description" content="Step inside the investigation. Read the raw narratives of history's most notable crimes and trials.">
+<meta property="og:url" content="https://court-dossier.suvadipchakraborty.workers.dev/">
+<meta property="og:image" content="https://court-dossier.suvadipchakraborty.workers.dev/preview.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Court Dossier">
+<meta name="twitter:description" content="Step inside the investigation. Read the raw narratives of history's most notable crimes and trials.">
+<meta name="twitter:image" content="https://court-dossier.suvadipchakraborty.workers.dev/preview.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Special+Elite&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<main>
+  <section id="tab-archives" class="tab active">
+    <header class="masthead">
+      <h1>Court Dossier</h1>
+      <p class="stamp">Case files on record</p>
+    </header>
+    <div class="toolbar">
+      <label for="category">Category</label>
+      <select id="category">
+        <option value="homicides">Homicides</option>
+        <option value="robberies">Robberies</option>
+        <option value="trials">Famous Trials</option>
+        <option value="supreme">Supreme Court Rulings</option>
+      </select>
+    </div>
+    <div id="status" role="status" aria-live="polite"></div>
+    <div id="grid" class="grid"></div>
+  </section>
+
+  <section id="tab-about" class="tab">
+    <article class="about">
+      <h2>Court Dossier</h2>
+      <p class="lead">Step inside the investigation. Read the raw narratives of history's most notable crimes and trials.</p>
+      <h3>Features</h3>
+      <p>Real-time semantic graph querying via Wikidata and targeted narrative extraction via Wikipedia.</p>
+      <h3>Benefits</h3>
+      <p>Filters out dense legalese and wiki-bloat to give you exactly the "how-it-happened" story.</p>
+      <h3>Credits</h3>
+      <p>Powered by the open Wikidata and MediaWiki APIs. Text from Wikipedia is available under CC BY-SA.</p>
+      <button id="installBtn" class="btn" hidden>Install app</button>
+      <p id="installHint" class="hint">To install, use your browser's "Add to Home Screen" option.</p>
+    </article>
+  </section>
+</main>
+
+<nav class="tabbar" aria-label="Main">
+  <button data-tab="archives" class="on"><span aria-hidden="true">📁</span>The Archives</button>
+  <button data-tab="about"><span aria-hidden="true">ℹ️</span>About</button>
+</nav>
+
+<div id="modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="mTitle" hidden>
+  <div class="dossier">
+    <div class="bar">
+      <button id="mClose" class="icon" aria-label="Close dossier">✕</button>
+      <button id="mShare" class="icon" aria-label="Share this case">⤴ Share</button>
+    </div>
+    <div class="paper">
+      <p id="mMeta" class="meta"></p>
+      <h2 id="mTitle"></h2>
+      <div id="mBody" class="reading"></div>
+      <p id="mSrc" class="src"></p>
+    </div>
+  </div>
+</div>
+<script src="app.js" type="module"></script>
+</body>
+</html>
